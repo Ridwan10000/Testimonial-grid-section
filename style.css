@@ -1,0 +1,152 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+:root{
+    /* primary color */
+
+    --clr-moderate-violet: hsl(263, 55%, 52%);
+    --clr-dark-grayish-blue:hsl(217, 19%, 35%);
+    --clr-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --clr-white:hsl(0, 0%, 100%);
+
+    /* Neutral color */
+    --clr-light-gray:hsl(0, 0%, 81%);
+    --clr-light-grayish-blue:hsl(210, 46%, 95%);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    padding: 1.5rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-style: normal;
+    background-color: var(--clr-light-grayish-blue);
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+  .container{
+    width:90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1.4rem
+  }
+  .citation{
+    border-radius: 0.5rem;
+    padding:1.3rem 1.7rem 1.8rem 2.5rem;
+    box-shadow: 0 1px 5px 1px var(--clr-light-gray);
+  }
+  .citation > p{
+    line-height: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--clr-white);
+  }
+  .citation > blockquote{
+    margin-top: 1rem;
+    color: var(--clr-light-grayish-blue);
+    opacity: 0.7;
+    font-weight: 500;
+  }
+  .graduate-name-image{
+    display: flex;
+    align-items: center;
+    gap:25px;
+  }
+  .graduate-name-image > span{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1rem;
+  }
+  .graduate-name{
+    font-weight: 600;
+    color: var(--clr-light-grayish-blue)
+  }
+  .text-verified-graduate{
+    color:var(--clr-light-grayish-blue);
+    opacity: 0.5;
+    font-size: 0.8rem;
+  } 
+  img{
+    width: 35px;
+    border-radius: 50%;
+    outline: 1px solid white;
+  }
+  .daniel{
+    background-color: var(--clr-moderate-violet);
+    background-image: url('/images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+  }
+  .jonathan{
+    background-color: var(--clr-dark-grayish-blue);
+  }
+  .jeanette{
+    background-color: var(--clr-white);
+  }
+  .patrick{
+    background-color: var(--clr-very-dark-blackish-blue);
+  }
+  .kira{
+    background-color: var(--clr-white);
+    
+  }
+  .kira > p, .jeanette > p{
+    color: var(--clr-very-dark-blackish-blue);
+  }
+  .kira > blockquote,.jeanette > blockquote{
+    color:var(--clr-dark-grayish-blue)
+  }
+  .kira .graduate-name, .jeanette .graduate-name{
+    color: var(--clr-dark-grayish-blue);
+    opacity: 0.7;
+  }
+  .kira .text-verified-graduate, .jeanette .text-verified-graduate{
+    color: var(--clr-dark-grayish-blue);
+  }
+
+  @media screen and (min-width:950px){
+    .container{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0;
+    }
+    .citation{
+        height: 100%;
+    }
+    .daniel{
+        grid-column: 1 / 3;
+    }
+    .kira{
+        grid-column: 4 / span 1;
+        grid-row: 1 / 3;
+    }
+    .patrick{
+        grid-column: 2 / 4;
+    }
+  }
